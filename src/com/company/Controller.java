@@ -15,7 +15,7 @@ public class Controller {
                 Statement stmt = null;
                 try {
                     stmt = mSqlConn.createStatement();
-                    stmt.executeQuery(sqlQuery);
+                    stmt.executeUpdate(sqlQuery);
                 } catch (SQLException e) {
                     e.printStackTrace();
                 } finally {
