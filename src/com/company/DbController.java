@@ -1,9 +1,10 @@
 package com.company;
 
-import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class DbController {
     public Label textAreaHeadingLabel;
@@ -12,7 +13,9 @@ public class DbController {
     public ToggleGroup dbms;
     private int ch;
 
-    public void runQuery(ActionEvent actionEvent) {
+    @FXML
+    public void initialize() {
+        executeSQLButton.setOnAction((event) -> {
         try {
             RadioButton chosenDbms = (RadioButton) dbms.getSelectedToggle(); // Cast object to radio button
             System.out.println(chosenDbms.getText());
@@ -21,9 +24,9 @@ public class DbController {
             else
                 ch = 1;
             Controller.execute(sqlQueryTextArea.getText(), ch);
-        } catch (IOException e) {
+        } catch (SQLException | IOException e) {
             e.printStackTrace();
         }
-        //finally{}
+        });
     }
 }

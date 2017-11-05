@@ -7,7 +7,7 @@
             fx:controller="com.company.DbController">
     <children>
         <Button fx:id="executeSQLButton" layoutX="439.0" layoutY="333.0" mnemonicParsing="false"
-                onAction="#runQuery" text="Execute  SQLQuery"/>
+                text="Execute  SQLQuery"/>
         <Label fx:id="textAreaHeadingLabel" layoutX="82.0" layoutY="82.0" text="Enter Your SQL Query Below:"/>
         <TextArea fx:id="sqlQueryTextArea" layoutX="82.0" layoutY="123.0" prefHeight="200.0" prefWidth="409.0"/>
         <RadioButton fx:id="mySqlRadioButton" layoutX="200.0" layoutY="337.0" mnemonicParsing="false" text="MySql">
