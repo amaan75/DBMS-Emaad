@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="411.0" prefWidth="573.0"
+            stylesheets="/com/company/DbController.css" xmlns="http://javafx.com/javafx/8.0.141"
+            fx:controller="com.company.DbController">
+    <children>
+        <Button fx:id="executeSQLButton" layoutX="439.0" layoutY="333.0" mnemonicParsing="false"
+                onAction="#runQuery" text="Execute  SQLQuery"/>
+        <Label fx:id="textAreaHeadingLabel" layoutX="82.0" layoutY="82.0" text="Enter Your SQL Query Below:"/>
+        <TextArea fx:id="sqlQueryTextArea" layoutX="82.0" layoutY="123.0" prefHeight="200.0" prefWidth="409.0"/>
+        <RadioButton fx:id="mySqlRadioButton" layoutX="200.0" layoutY="337.0" mnemonicParsing="false" text="MySql">
+            <toggleGroup>
+                <ToggleGroup fx:id="dbms"/>
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="postGreRadioButton" layoutX="317.0" layoutY="337.0" mnemonicParsing="false" text="PostGre"
+                     toggleGroup="$dbms"/>
+        <Label fx:id="mainHeadingLabel" layoutX="266.0" layoutY="14.0" text="DBMS PROJECT"/>
+    </children>
+</AnchorPane>
