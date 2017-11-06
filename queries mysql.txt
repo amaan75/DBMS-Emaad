@@ -1,5 +1,5 @@
 1st query CREATE TABLE pet (name VARCHAR(20), owner VARCHAR(20),
- species VARCHAR(20), sex CHAR(1), birth Number, death DATE);
+ species VARCHAR(20), sex CHAR(1), birth Int, death DATE);
 2nd queryUPDATE pet SET species = species + 1;
 RESULTSET = EXECUTEQUERY();
 NO RESULTSET = EXECUTEUPDATE();
