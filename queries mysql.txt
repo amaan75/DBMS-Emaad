@@ -4,4 +4,4 @@
 RESULTSET = EXECUTEQUERY();
 NO RESULTSET = EXECUTEUPDATE();
 Directory for my.ini where we have [mysqld]:"C:\ProgramData\MySQL\MySQL Server 5.7\my.ini"
-slow query log sql :"C:\ProgramData\MySQL\MySQL Server 5.7\Data\DESKTOP-O3P2JVR-slow"
+slow query log sql :"C:\ProgramData\MySQL\MySQL Server 5.7\Data\DESKTOP-O3P2JVR-slow.log"
