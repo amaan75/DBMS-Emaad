@@ -1,9 +1,7 @@
 package com.company;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class Controller {
     public static void execute(String sqlQuery, int ch, boolean hasResultSet) throws IOException, SQLException {
@@ -26,7 +24,17 @@ public class Controller {
         try {
             stmt = sqlConn.createStatement();
             if (hasResultSet) {
-                stmt.executeQuery(sqlQuery);
+                ResultSet resultSet = stmt.executeQuery(sqlQuery);
+                ResultSetMetaData rsmd = resultSet.getMetaData();
+                int columnsNumber = rsmd.getColumnCount();
+                while (resultSet.next()) {
+                    for (int i = 1; i <= columnsNumber; i++) {
+                        if (i > 1) System.out.print(",  ");
+                        String columnValue = resultSet.getString(i);
+                        System.out.print(columnValue + " " + rsmd.getColumnName(i));
+                    }
+                    System.out.println("");
+                }
             } else {
                 stmt.executeUpdate(sqlQuery);
             }
